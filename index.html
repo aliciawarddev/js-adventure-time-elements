@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adventure Time Elements</title>
-    <!-- Link to CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -13,15 +12,16 @@
         <h1>Adventure Time Elements</h1>
         <p class="subtitle">The four elemental forces must remain balanced for Ooo to survive</p>
     </header>
-    <div class="elements-container">
+    
+    <div class="container">
         <div class="circle">
             <!-- Ice Quadrant (Top Left) -->
             <div class="quadrant ice" data-element="ice">
                 <h2 class="title">❄️ Ice</h2>
                 <div class="content hidden">
                     <div class="lore-content">
-                        <h3>Melancholic</h3>
-                        <p class="elemental-name">Patience St. Pim</p>
+                        <h3><strong>Tenmperament:</strong> Melancholic</h3>
+                        <p class="elemental-name"><strong>Elemental:</strong> Patience St. Pim</p>
                         
                         <div class="traits">
                             <p><strong>Nature:</strong> Quiet, analytical, reserved</p>
@@ -30,8 +30,8 @@
                         </div>
                         
                         <div class="history">
-                            <p class="historical">Past: Urgence Evergreen</p>
-                            <p class="note">Created the magical crown in the Cretaceous period</p>
+                            <p class="historical"><strong>Past Elemental:</strong> Urgence Evergreen</p>
+                            <p class="note"><strong>Note:</strong> Created the magical crown in the Cretaceous period</p>
                         </div>
                     </div>
                 </div>
@@ -42,8 +42,8 @@
                 <h2 class="title">🍬 Candy</h2>
                 <div class="content hidden">
                     <div class="lore-content">
-                        <h3>Sanguine</h3>
-                        <p class="elemental-name">Princess Bubblegum</p>
+                        <h3><strong>Temperament:</strong> Sanguine</h3>
+                        <p class="elemental-name"><strong>Elemental:</strong> Princess Bubblegum</p>
                         
                         <div class="traits">
                             <p><strong>Nature:</strong> Social, energetic, sweet</p>
@@ -52,8 +52,8 @@
                         </div>
                         
                         <div class="history">
-                            <p class="historical">Past: Chatsberry</p>
-                            <p class="note">Low-magic element - can exist without heavy magic</p>
+                            <p class="historical"><strong>Past Elemental:</strong> Chatsberry</p>
+                            <p class="note"><strong>Note:</strong> Low-magic element - can exist without heavy magic</p>
                         </div>
                     </div>
                 </div>
@@ -64,8 +64,8 @@
                 <h2 class="title">🔥 Fire</h2>
                 <div class="content hidden">
                     <div class="lore-content">
-                        <h3>Choleric</h3>
-                        <p class="elemental-name">Flame Princess</p>
+                        <h3><strong>Temperament:</strong> Choleric</h3>
+                        <p class="elemental-name"><strong>Elemental:</strong> Flame Princess</p>
                         
                         <div class="traits">
                             <p><strong>Nature:</strong> Aggressive, irritable, passionate</p>
@@ -74,20 +74,20 @@
                         </div>
                         
                         <div class="history">
-                            <p class="historical">Past: Balthus</p>
-                            <p class="note">High-magic element - requires magic to sustain life</p>
+                            <p class="historical"><strong>Past Elemental:</strong> Balthus</p>
+                            <p class="note"><strong>Note:</strong> High-magic element - requires magic to sustain life</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-           <!-- Slime Quadrant (Bottom Left) -->
+            <!-- Slime Quadrant (Bottom Left) -->
             <div class="quadrant slime" data-element="slime">
                 <h2 class="title">💚 Slime</h2>
                 <div class="content hidden">
                     <div class="lore-content">
-                        <h3>Phlegmatic</h3>
-                        <p class="elemental-name">Slime Princess</p>
+                        <h3><strong>Temperament:</strong> Phlegmatic</h3>
+                        <p class="elemental-name"><strong>Elemental:</strong> Slime Princess</p>
                         
                         <div class="traits">
                             <p><strong>Nature:</strong> Relaxed, passive, easygoing</p>
@@ -96,8 +96,8 @@
                         </div>
                         
                         <div class="history">
-                            <p class="historical">Past: Slimy D</p>
-                            <p class="note">Low-magic element - organic and adaptable</p>
+                            <p class="historical"><strong>Past Elemental:</strong> Slimy D</p>
+                            <p class="note"><strong>Note:</strong>Low-magic element - organic and adaptable</p>
                         </div>
                     </div>
                 </div>
@@ -105,15 +105,21 @@
 
             <!-- Anti-Elemental Center Circle -->
             <div class="center-circle" data-element="lumps">
-                <div class="lumps-symbol">💜</div>
+                <h2 class="title">💜 Anti-Elemental</h2>
                 <div class="lumps-content hidden">
-                    <h3>Anti-Elemental</h3>
-                    <p class="elemental-name">Lumpy Space Princess</p>
-                    <p>The force that maintains balance between all elements. Her lumps create a subspace molecular lattice that can undo elemental corruption.</p>
+                    <p class="elemental-name"><strong>Elemental:</strong> Lumpy Space Princess</p>
+                    
+                    <p><strong>Nature:</strong> Self-involved, desires recognition, insists on "reality"</p>
+                    <p><strong>Power:</strong> Subspace molecular lattice binding science and magic</p>
+                    <p><strong>Role:</strong> Natural counterbalance to elemental forces</p>
+                    
+                    <p class="role-description">
+                        LSP represents non-elemental chaos and neutrality. Her "lumps" form a unique force that can undo elemental corruption and restore balance to Ooo. She is the key to preventing permanent elemental takeover.
+                    </p>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> <!-- End of circle div -->
+    </div> <!-- End of container div -->
 
     <!-- Additional Lore Section -->
     <section class="lore-section">
@@ -126,14 +132,8 @@
             <h2>The Great Imbalance</h2>
             <p>When Patience St. Pim awakened the elemental powers, Ooo divided into four regions. Each Elemental mutated into an extreme form, transforming inhabitants into elemental versions. Balance was restored by Lumpy Space Princess, the Anti-Elemental.</p>
         </div>
-        
-        <div class="lore-card anti-elemental">
-            <h2>💜 The Anti-Elemental</h2>
-            <p><strong>Lumpy Space Princess</strong> represents non-elemental chaos and neutrality. Her "lumps" form a subspace molecular lattice that binds science and magic, allowing her to undo elemental corruption and restore balance to Ooo.</p>
-        </div>
     </section>
 
-    <!-- Link to JavaScript -->
-     <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

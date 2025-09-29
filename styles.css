@@ -1,5 +1,4 @@
 /* GENERAL */
-
 * {
     margin: 0;
     padding: 0;
@@ -16,23 +15,10 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.elements-container {
+.container {
     position: relative;
-    width: 20rem;
-    height: 20rem;
-}
-
-/* HEADER */
-.header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-h1 {
-    font-size: 3rem;
-    color: white;
+    width:40rem;
+    height: 40rem;
 }
 
 /* CIRCLE */
@@ -98,21 +84,21 @@ h1 {
 .title {
     font-size: 1.5rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 0.125rem;
     transition: all 0.3s ease;
 }
 
 /* CONTENT STYLING */
 .content {
-    margin-top: 20px;
+    margin-top: 1.25rem;
     text-align: center;
     transition: all 0.3s ease;
     opacity: 1;
 }
 
 .content p {
-    margin: 10px 0;
-    font-size: 14px;
+    margin: 0.625rem 0;
+    font-size: 0.875rem;
 }
 
 .hidden {
@@ -128,10 +114,273 @@ h1 {
 }
 
 .quadrant.active .title {
-    font-size: 32px;
+    font-size: 2rem;
 }
 
 .quadrant.active .content {
     display: block;
     opacity: 1;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Enhanced content styling for lore */
+.lore-content {
+    padding: 0 1rem;
+}
+
+.lore-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.elemental-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+.traits p,
+.history p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.traits strong {
+    display: inline-block;
+    min-width: 80px;
+}
+
+.history {
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.historical {
+    font-style: italic;
+}
+
+.note {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+/* Lore Section below the circle */
+.lore-section {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.lore-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 15px;
+    color: white;
+    flex: 1;
+    min-width: 250px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.lore-card h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.lore-card p {
+    line-height: 1.6;
+    margin: 0;
+}
+
+.anti-elemental {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(139, 92, 246, 0.2));
+    border: 1px solid rgba(147, 51, 234, 0.3);
+}
+
+/* Adjust active quadrant for more content */
+.quadrant.active .lore-content {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Center Circle for Anti-Elemental */
+.center-circle {
+    position: absolute;
+    width: 35%;
+    height: 35%;
+    background: linear-gradient(135deg, #9333ea, #8b5cf6);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 15;
+    box-shadow: 
+        0 0 20px rgba(147, 51, 234, 0.5),
+        inset 0 0 20px rgba(139, 92, 246, 0.3);
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.center-circle .title {
+    font-size: 1.5rem;  /* Same as quadrant titles */
+    text-transform: uppercase;  /* Same as quadrant titles */
+    letter-spacing: 0.125rem;  /* Same as quadrant titles */
+    transition: all 0.3s ease;  /* Same as quadrant titles */
+    margin: 0;  /* Ensure proper centering */
+    text-align: center;
+}
+
+.center-circle:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 
+        0 0 30px rgba(147, 51, 234, 0.7),
+        inset 0 0 25px rgba(139, 92, 246, 0.4);
+}
+
+.lumps-symbol {
+    font-size: 2rem;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    transition: all 0.3s ease;
+}
+
+.lumps-content {
+    margin-top: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    opacity: 1;
+    color: white;
+    padding: 0 1rem;
+}
+
+.lumps-content h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.lumps-content .elemental-name {
+    font-weight: bold;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+.lumps-content p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.lumps-content .role-description {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-style: italic;
+}
+
+/* Active state for center circle */
+.center-circle.active {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 20;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #a855f7, #9333ea);
+}
+
+.center-circle.active .title {
+    font-size: 2rem;  /* Matches the quadrant active title size */
+}
+
+.center-circle.active .lumps-symbol {
+    font-size: 3rem;
+}
+
+.center-circle.active .lumps-content {
+    display: block !important;
+    animation: fadeIn 0.3s ease;
+}
+
+.center-circle:not(.active) .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .lore-section {
+        flex-direction: column;
+    }
+    
+    .container {
+        width: 18rem;
+        height: 18rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .center-circle {
+        width: 30%;
+        height: 30%;
+    }
+    
+    .lumps-content {
+        min-width: 200px;
+        font-size: 0.85rem;
+    }
 }
