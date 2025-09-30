@@ -148,7 +148,6 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .subtitle {
@@ -163,15 +162,17 @@ header h1 {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    gap: 1rem;
 }
 
 .elemental-image {
     height: 15rem;
     width: auto;
+    max-width: 15rem;
 }
 
 figcaption {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 /* Enhanced content styling for lore */
@@ -195,7 +196,6 @@ figcaption {
     font-size: 1.1rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
     padding-bottom: 0.5rem;
 }
 
@@ -214,7 +214,6 @@ figcaption {
 .history {
     margin-top: 1rem;
     padding-top: 0.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .historical {
