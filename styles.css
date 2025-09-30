@@ -17,8 +17,8 @@ body {
 
 .container {
     position: relative;
-    width:40rem;
-    height: 40rem;
+    width: 50rem;
+    height: 50rem;
 }
 
 /* CIRCLE */
@@ -43,7 +43,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    color: white;
+    color: black;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -54,30 +54,46 @@ body {
 /* QUADRANT POSITIONING AND COLORS */
 .ice {
     top: 0;
-    left: 0;
-    background: #4FC3F7;
-    border-radius: 100% 0 0 0;
+    right: 0;
+    background: url('images/bg-ice.png');
+    background-color: #4FC3F7;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    border-radius: 0 100% 0 0;
 }
 
 .candy {
     top: 0;
-    right: 0;
-    background: #F8BBD0;
-    border-radius: 0 100% 0 0;
+    left: 0;
+    background: url('images/bg-candy.png');
+    background-color: #F8BBD0;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    border-radius:100% 0 0 0;
 }
 
 .fire {
     bottom: 0;
-    right: 0;
-    background: #FF9800;
-    border-radius: 0 0 100% 0;
+    left: 0;
+    background: url('images/bg-fire.png');
+    background-color: #FF9800;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    border-radius: 0 0 0 100%;
 }
 
 .slime {
     bottom: 0;
-    left: 0;
-    background: #8BC34A;
-    border-radius: 0 0 0 100%;
+    right: 0;
+    background: url('images/bg-slime.png');
+    background-color: #8BC34A;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    border-radius: 0 0 100% 0;
 }
 
 /* QUADRANT TITLE STYLING */
@@ -141,9 +157,30 @@ header h1 {
     opacity: 0.9;
 }
 
+/* ELEMENTAL IMAGES */
+.elemental-images-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.elemental-image {
+    height: 15rem;
+    width: auto;
+}
+
+figcaption {
+    font-size: 0.8rem;
+}
+
 /* Enhanced content styling for lore */
 .lore-content {
-    padding: 0 1rem;
+    padding: 2rem;
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    text-align: left;
 }
 
 .lore-content h3 {
@@ -151,6 +188,7 @@ header h1 {
     margin-bottom: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: black;
 }
 
 .elemental-name {
@@ -192,31 +230,42 @@ header h1 {
 .lore-section {
     margin-top: 3rem;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 1.5rem;
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 1rem;
     flex-wrap: wrap;
+}
+
+.lore-cards-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
     justify-content: center;
+    gap: 1.5rem;
 }
 
 .lore-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: white;
     backdrop-filter: blur(10px);
     padding: 1.5rem;
     border-radius: 15px;
-    color: white;
+    color: black;
     flex: 1;
     min-width: 250px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 1rem;
 }
 
 .lore-card h2 {
     margin-top: 0;
     margin-bottom: 1rem;
     font-size: 1.3rem;
-    color: #fff;
+    color: black;
 }
 
 .lore-card p {
@@ -224,9 +273,11 @@ header h1 {
     margin: 0;
 }
 
-.anti-elemental {
-    background: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(139, 92, 246, 0.2));
-    border: 1px solid rgba(147, 51, 234, 0.3);
+/* WORLD IMAGE */
+.world-image {
+    width: auto;
+    height: 15rem;
+    border-radius: 15px;
 }
 
 /* Adjust active quadrant for more content */
@@ -245,12 +296,24 @@ header h1 {
     }
 }
 
+.lumps {
+    
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    
+}
+
 /* Center Circle for Anti-Elemental */
 .center-circle {
     position: absolute;
     width: 35%;
     height: 35%;
-    background: linear-gradient(135deg, #9333ea, #8b5cf6);
+    background: url('images/bg-ls.webp');
+    background-color: purple;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -306,6 +369,7 @@ header h1 {
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    color: black;
 }
 
 .lumps-content .elemental-name {
@@ -337,6 +401,8 @@ header h1 {
     z-index: 20;
     transform: translate(-50%, -50%);
     background: linear-gradient(135deg, #a855f7, #9333ea);
+    background-size: cover;
+    background-position: center;
 }
 
 .center-circle.active .title {

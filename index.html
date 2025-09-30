@@ -15,12 +15,44 @@
     
     <div class="container">
         <div class="circle">
-            <!-- Ice Quadrant (Top Left) -->
-            <div class="quadrant ice" data-element="ice">
-                <h2 class="title">❄️ Ice</h2>
+            <!-- Candy Quadrant (Top Left) -->
+            <div class="quadrant candy" data-element="candy">
+                <h2 class="title">Candy</h2>
                 <div class="content hidden">
                     <div class="lore-content">
-                        <h3><strong>Tenmperament:</strong> Melancholic</h3>
+                        <h3><strong>Temperament:</strong> Sanguine</h3>
+                        <p class="elemental-name"><strong>Elemental:</strong> Princess Bubblegum</p>
+                        <div class="elemental-images-container">
+                            <figure>
+                                <img class=elemental-image src="images/pb-1.webp">
+                                <figcaption>Normal Form</figcaption>
+                            </figure>
+
+                            <figure>
+                                <img class=elemental-image src="images/pb-3.webp">
+                                <figcaption>Pure Elemental Form</figcaption>
+                            </figure>
+                        </div>
+                        <div class="traits">
+                            <p><strong>Nature:</strong> Social, energetic, sweet</p>
+                            <p><strong>Corruption:</strong> Forced happiness, brainwashed obedience</p>
+                            <p><strong>Style:</strong> Outward-accepting - assimilates for harmony</p>
+                        </div>
+                        
+                        <div class="history">
+                            <p class="historical"><strong>Past Elemental:</strong> Chatsberry</p>
+                            <p class="note"><strong>Note:</strong> Low-magic element - can exist without heavy magic</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ice Quadrant (Top Right) -->
+            <div class="quadrant ice" data-element="ice">
+                <h2 class="title">Ice</h2>
+                <div class="content hidden">
+                    <div class="lore-content">
+                        <h3><strong>Temperament:</strong> Melancholic</h3>
                         <p class="elemental-name"><strong>Elemental:</strong> Patience St. Pim</p>
                         
                         <div class="traits">
@@ -37,53 +69,9 @@
                 </div>
             </div>
 
-            <!-- Candy Quadrant (Top Right) -->
-            <div class="quadrant candy" data-element="candy">
-                <h2 class="title">🍬 Candy</h2>
-                <div class="content hidden">
-                    <div class="lore-content">
-                        <h3><strong>Temperament:</strong> Sanguine</h3>
-                        <p class="elemental-name"><strong>Elemental:</strong> Princess Bubblegum</p>
-                        
-                        <div class="traits">
-                            <p><strong>Nature:</strong> Social, energetic, sweet</p>
-                            <p><strong>Corruption:</strong> Forced happiness, brainwashed obedience</p>
-                            <p><strong>Style:</strong> Outward-accepting - assimilates for harmony</p>
-                        </div>
-                        
-                        <div class="history">
-                            <p class="historical"><strong>Past Elemental:</strong> Chatsberry</p>
-                            <p class="note"><strong>Note:</strong> Low-magic element - can exist without heavy magic</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Fire Quadrant (Bottom Right) -->
-            <div class="quadrant fire" data-element="fire">
-                <h2 class="title">🔥 Fire</h2>
-                <div class="content hidden">
-                    <div class="lore-content">
-                        <h3><strong>Temperament:</strong> Choleric</h3>
-                        <p class="elemental-name"><strong>Elemental:</strong> Flame Princess</p>
-                        
-                        <div class="traits">
-                            <p><strong>Nature:</strong> Aggressive, irritable, passionate</p>
-                            <p><strong>Corruption:</strong> Violence, destruction, chaos</p>
-                            <p><strong>Style:</strong> Outward-rejecting - conquers through combat</p>
-                        </div>
-                        
-                        <div class="history">
-                            <p class="historical"><strong>Past Elemental:</strong> Balthus</p>
-                            <p class="note"><strong>Note:</strong> High-magic element - requires magic to sustain life</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slime Quadrant (Bottom Left) -->
+            <!-- Slime Quadrant (Bottom Right) -->
             <div class="quadrant slime" data-element="slime">
-                <h2 class="title">💚 Slime</h2>
+                <h2 class="title">Slime</h2>
                 <div class="content hidden">
                     <div class="lore-content">
                         <h3><strong>Temperament:</strong> Phlegmatic</h3>
@@ -103,10 +91,33 @@
                 </div>
             </div>
 
+            <!-- Fire Quadrant (Bottom Left) -->
+            <div class="quadrant fire" data-element="fire">
+                <h2 class="title">Fire</h2>
+                <div class="content hidden">
+                    <div class="lore-content">
+                        <h3><strong>Temperament:</strong> Choleric</h3>
+                        <p class="elemental-name"><strong>Elemental:</strong> Flame Princess</p>
+                        
+                        <div class="traits">
+                            <p><strong>Nature:</strong> Aggressive, irritable, passionate</p>
+                            <p><strong>Corruption:</strong> Violence, destruction, chaos</p>
+                            <p><strong>Style:</strong> Outward-rejecting - conquers through combat</p>
+                        </div>
+                        
+                        <div class="history">
+                            <p class="historical"><strong>Past Elemental:</strong> Balthus</p>
+                            <p class="note"><strong>Note:</strong> High-magic element - requires magic to sustain life</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Anti-Elemental Center Circle -->
             <div class="center-circle" data-element="lumps">
-                <h2 class="title">💜 Anti-Elemental</h2>
+                <h2 class="title">Lumps</h2>
                 <div class="lumps-content hidden">
+                    <h3>Anti-Elemental</h3>
                     <p class="elemental-name"><strong>Elemental:</strong> Lumpy Space Princess</p>
                     
                     <p><strong>Nature:</strong> Self-involved, desires recognition, insists on "reality"</p>
@@ -123,16 +134,23 @@
 
     <!-- Additional Lore Section -->
     <section class="lore-section">
-        <div class="lore-card">
-            <h2>The Elemental Cycle</h2>
-            <p>Elementals are immortal beings who reincarnate across eras. One Elemental per element exists at a time, with their jewels serving as power anchors. Upon death, they are reborn in new hosts, sometimes able to contact past lives.</p>
-        </div>
+        <div class="lore-cards-container">
+            <div class="lore-card">
+                <h2>The Elemental Cycle</h2>
+                <p>Elementals are immortal beings who reincarnate across eras. One Elemental per element exists at a time, with their jewels serving as power anchors. Upon death, they are reborn in new hosts, sometimes able to contact past lives.</p>
+            </div>
         
-        <div class="lore-card">
-            <h2>The Great Imbalance</h2>
-            <p>When Patience St. Pim awakened the elemental powers, Ooo divided into four regions. Each Elemental mutated into an extreme form, transforming inhabitants into elemental versions. Balance was restored by Lumpy Space Princess, the Anti-Elemental.</p>
+            <div class="lore-card">
+                <h2>The Great Imbalance</h2>
+                <p>When Patience St. Pim awakened the elemental powers, Ooo divided into four regions. Each Elemental mutated into an extreme form, transforming inhabitants into elemental versions. Balance was restored by Lumpy Space Princess, the Anti-Elemental.</p>
+            </div>
+        </div>
+        <div class="lore-image">
+            <img src="images/bg-world-3.jpg" class="world-image">
         </div>
     </section>
+    
+    
 
     <script src="script.js"></script>
 </body>
