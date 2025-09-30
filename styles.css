@@ -1,3 +1,23 @@
+/* VARIABLES */
+:root {
+    --candy-base: #feabf5;
+    --ice-base: #7bf7ff;
+    --slime-base: #95ffab;
+    --fire-base: #fecf64;
+    --candy-light: #fea9ff;
+    --candy-dark: #b23bb3;
+    --ice-light: #44f0ff;
+    --ice-dark: #24bbff;
+    --slime-light: #88c801;
+    --slime-dark: #67b001;
+    --fire-light: #91a5ac;
+    --fire-dark: #697e89;
+    --fire-border: 
+    --candy-border:var
+    --ice-border:
+    --slime-border: 
+}
+
 /* GENERAL */
 * {
     margin: 0;
@@ -48,7 +68,6 @@ header {
     position: relative;
     overflow: hidden;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-    border: 5px solid white;
 }
 
 /* QUADRANT */
@@ -64,7 +83,6 @@ header {
     align-items: center;
     overflow: hidden;
     color: black;
-    border: 5px solid white;
 }
 
 .quadrant h2 {
@@ -87,6 +105,7 @@ header {
     background-position: center; 
     background-repeat: no-repeat; 
     border-radius: 0 100% 0 0;
+    border: 5px solid var(--ice-dark);
 }
 
 .candy {
@@ -98,6 +117,7 @@ header {
     background-position: center; 
     background-repeat: no-repeat; 
     border-radius:100% 0 0 0;
+    border: 5px solid var(--candy-light);
 }
 
 .fire {
@@ -109,6 +129,7 @@ header {
     background-position: center; 
     background-repeat: no-repeat; 
     border-radius: 0 0 0 100%;
+    border: 5px solid var(--fire-dark);
 }
 
 .slime {
@@ -120,6 +141,7 @@ header {
     background-position: center; 
     background-repeat: no-repeat; 
     border-radius: 0 0 100% 0;
+    border: 5px solid var(--slime-dark);
 }
 
 /* QUADRANT TITLE STYLING */
@@ -128,6 +150,38 @@ header {
     text-transform: uppercase;
     letter-spacing: 0.125rem;
     transition: all 0.3s ease;
+}
+
+/* Candy title */
+.quadrant.candy .title {
+    color: white;
+    background-color: var(--candy-light);
+    border-radius: 15px;
+    padding: 0.5rem;
+}
+
+/* Ice title */
+.quadrant.ice .title {
+    color: white;
+    background-color: var(--ice-dark);
+    border-radius: 15px;
+    padding: 0.5rem;
+}
+
+/* Slime title */
+.quadrant.slime .title {
+    color: white;
+    background-color: var(--slime-dark);
+    border-radius: 15px;
+    padding: 0.5rem;
+}
+
+/* Fire title */
+.quadrant.fire .title {
+    color: white;
+    background-color: var(--fire-dark);
+    border-radius: 15px;
+    padding: 0.5rem;
 }
 
 /* CONTENT STYLING */
@@ -323,7 +377,6 @@ figcaption {
 }
 
 .lumps {
-    
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
@@ -352,7 +405,7 @@ figcaption {
     z-index: 15;
     transition: all 0.3s ease;
     color: white;
-    border: 5px solid white;
+    border: 5px solid purple;
 }
 
 .center-circle .title {
@@ -363,7 +416,10 @@ figcaption {
     transition: all 0.3s ease;  /* Same as quadrant titles */
     margin: 0;  /* Ensure proper centering */
     text-align: center;
-    color: black;
+    color: white;
+    background-color: purple;
+    border-radius: 15px;
+    padding: 0.5rem;
 }
 
 .center-circle:hover {
@@ -399,7 +455,6 @@ figcaption {
     color: black;
     font-family: 'Patrick Hand SC', sans-serif;
     text-align: center;
-    col
 }
 
 .lumps-content .elemental-name {
