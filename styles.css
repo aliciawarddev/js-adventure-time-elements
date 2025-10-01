@@ -371,8 +371,7 @@ header {
     text-align: center;
 }
 
-.traits p,
-.history p,  {
+.traits p  {
     margin: 0.3rem 0; /* Reduced from 0.5rem */
     font-family: 'Patrick Hand', sans-serif;
     font-size: 1rem; /* Reduced from 1.3rem */
@@ -426,7 +425,7 @@ header {
     align-items: stretch; /* Equal heights */
     justify-content: center;
     gap: 2rem;
-    width: 100%;
+    width: 55rem;
 }
 
 .lore-card {
@@ -434,9 +433,10 @@ header {
     padding: 1.5rem;
     border-radius: 15px;
     color: var(--grey-dark);
-    width: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
+    flex: stretch;
 }
 
 .lore-card h3 { /* Changed from h2 */
