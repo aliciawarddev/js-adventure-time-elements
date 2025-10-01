@@ -1,21 +1,33 @@
 /* VARIABLES */
 :root {
-    --candy-base: #feabf5;
-    --ice-base: #7bf7ff;
-    --slime-base: #95ffab;
-    --fire-base: #fecf64;
-    --candy-light: #fea9ff;
-    --candy-dark: #b23bb3;
-    --ice-light: #44f0ff;
-    --ice-dark: #24bbff;
-    --slime-light: #88c801;
-    --slime-dark: #67b001;
-    --fire-light: #91a5ac;
-    --fire-dark: #697e89;
-    --fire-border: 
-    --candy-border:var
-    --ice-border:
-    --slime-border: 
+    /* Element Colors */
+    --lumps-light: #B270C7;
+    --lumps-medium: #78077D;
+    --lumps-dark: #520054;
+    --lumps-darkest: #3A1234;
+    --candy-light: #FFD5FD;
+    --candy-medium: #FF8BFE;
+    --candy-dark: #FE46FE;
+    --candy-darkest: #BD20AF;
+    --ice-light: #3089B3;
+    --ice-medium: #085583;
+    --ice-dark: #012F61;
+    --ice-darkest: #041E5B;
+    --fire-light: #9CA6B2;
+    --fire-medium: #707E8B;
+    --fire-dark: #4A5666;
+    --fire-darkest: #242C37;
+    --slime-light: #83BF07;
+    --slime-medium: #679A01;
+    --slime-dark: #517F03;
+    --slime-darkest: #2B4B08;
+
+    /* Neutral Colors */
+    --off-white: #FAF8F5;  ;
+    --grey-light: #E8E4DF;
+    --grey-medium: #9B9590; 
+    --grey-dark: #2E2B28;
+    --black: #1A1816;
 }
 
 /* GENERAL */
@@ -31,7 +43,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #2a2a2a;
+    background: var(--grey-dark);
     font-family: 'Patrick Hand', sans-serif;
 }
 
@@ -44,7 +56,7 @@ body {
 /* HEADER */
 header {
     text-align: center;
-    color: white;
+    color: var(--off-white);
     margin-bottom: 5rem;
     margin-top: 2rem;
 }
@@ -52,12 +64,23 @@ header {
 .page-title {
     font-family: 'Patrick Hand SC', sans-serif;
     font-size: 4rem;
+    color: var(--off-white);
 }
 
 .subtitle {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     font-size: 1.5rem;
-    opacity: 0.9;
+    color: var(--grey-light);
+}
+
+.intro {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+    color: var(--grey-light);
 }
 
 /* CIRCLE */
@@ -82,13 +105,12 @@ header {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    color: black;
+    color: var(--grey-dark);
 }
 
 .quadrant h2 {
     font-family: 'Patrick Hand SC', sans-serif;
     font-size: 2rem;
-    background-color: white;
 }
 
 .quadrant:hover {
@@ -100,48 +122,48 @@ header {
     top: 0;
     right: 0;
     background: url('images/bg-ice.png');
-    background-color: #4FC3F7;
+    background-color: var(--ice-light);
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
     border-radius: 0 100% 0 0;
-    border: 5px solid var(--ice-dark);
+    border: 5px solid var(--ice-medium);
 }
 
 .candy {
     top: 0;
     left: 0;
     background: url('images/bg-candy.png');
-    background-color: #F8BBD0;
+    background-color: var(--candy-light);
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
     border-radius:100% 0 0 0;
-    border: 5px solid var(--candy-light);
+    border: 5px solid var(--candy-medium);
 }
 
 .fire {
     bottom: 0;
     left: 0;
     background: url('images/bg-fire.png');
-    background-color: #FF9800;
+    background-color: var(--fire-light);
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
     border-radius: 0 0 0 100%;
-    border: 5px solid var(--fire-dark);
+    border: 5px solid var(--fire-medium);
 }
 
 .slime {
     bottom: 0;
     right: 0;
     background: url('images/bg-slime.png');
-    background-color: #8BC34A;
+    background-color: var(--slime-light);
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
     border-radius: 0 0 100% 0;
-    border: 5px solid var(--slime-dark);
+    border: 5px solid var(--slime-medium);
 }
 
 /* QUADRANT TITLE STYLING */
@@ -154,15 +176,15 @@ header {
 
 /* Candy title */
 .quadrant.candy .title {
-    color: white;
-    background-color: var(--candy-light);
+     color: var(--off-white);
+    background-color: var(--candy-dark);
     border-radius: 15px;
     padding: 0.5rem;
 }
 
 /* Ice title */
 .quadrant.ice .title {
-    color: white;
+     color: var(--off-white);
     background-color: var(--ice-dark);
     border-radius: 15px;
     padding: 0.5rem;
@@ -170,15 +192,15 @@ header {
 
 /* Slime title */
 .quadrant.slime .title {
-    color: white;
-    background-color: var(--slime-dark);
+     color: var(--off-white);
+    background-color: var(--slime-darkest);
     border-radius: 15px;
     padding: 0.5rem;
 }
 
 /* Fire title */
 .quadrant.fire .title {
-    color: white;
+    color: var(--off-white);
     background-color: var(--fire-dark);
     border-radius: 15px;
     padding: 0.5rem;
@@ -235,14 +257,18 @@ header {
 }
 
 figcaption {
-    font-size: 0.7rem;
+    font-size: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Enhanced content styling for lore */
 .lore-content {
     padding: 2rem;
-    background-color: rgba(255, 255, 255, 1);
-    color: black;
+    background-color: var(--off-white);
+    color: var(--grey-dark);
     border-radius: 15px;
     text-align: left;
 }
@@ -250,7 +276,7 @@ figcaption {
 .lore-content P {
     font-family: 'Patrick Hand', sans-serif;
     font-size: 1.2rem;
-    color: black;
+    color: var(--grey-dark);
     line-height: 1.4;
 }
 
@@ -259,24 +285,18 @@ figcaption {
     margin-bottom: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: black;
+    color: var(--grey-dark);
     font-family: 'Patrick Hand SC', sans-serif;
     text-align: center;
 }
 
-.elemental-name {
-    font-family: 'Patrick Hand', sans-serif;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-}
-
 .traits p,
-.history p {
+.history p, 
+.elemental-name {
     margin: 0.5rem 0;
     font-family: 'Patrick Hand', sans-serif;
-    font-size: 1.2rem;
-    color: black;
+    font-size: 1.3rem;
+    color: var(--grey-dark);
     line-height: 1.4;
 }
 
