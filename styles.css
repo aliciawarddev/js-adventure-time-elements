@@ -185,7 +185,7 @@ header {
 /* Ice title */
 .quadrant.ice .title {
      color: var(--off-white);
-    background-color: var(--ice-dark);
+    background-color: var(--ice-darkest);
     border-radius: 15px;
     padding: 0.5rem;
 }
@@ -202,6 +202,19 @@ header {
 .quadrant.fire .title {
     color: var(--off-white);
     background-color: var(--fire-dark);
+    border-radius: 15px;
+    padding: 0.5rem;
+}
+
+/* Lumps title */
+/* Lumps title */
+.center-circle h2.title {
+    font-family: 'Patrick Hand SC', sans-serif;
+    font-size: 1.5rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+    color: var(--off-white);
+    background-color: var(--lumps-darkest);
     border-radius: 15px;
     padding: 0.5rem;
 }
