@@ -1,7 +1,7 @@
 /* VARIABLES */
 :root {
     /* Element Colors */
-    --lumps-light: #B270C7;
+    --lumps-light: #D696F7;
     --lumps-medium: #78077D;
     --lumps-dark: #520054;
     --lumps-darkest: #3A1234;
@@ -9,15 +9,15 @@
     --candy-medium: #FF8BFE;
     --candy-dark: #FE46FE;
     --candy-darkest: #BD20AF;
-    --ice-light: #3089B3;
+    --ice-light: #89CCF4;
     --ice-medium: #085583;
     --ice-dark: #012F61;
     --ice-darkest: #041E5B;
-    --fire-light: #9CA6B2;
+    --fire-light: #D1D6DA;
     --fire-medium: #707E8B;
     --fire-dark: #4A5666;
     --fire-darkest: #242C37;
-    --slime-light: #83BF07;
+    --slime-light: #ADD555;
     --slime-medium: #679A01;
     --slime-dark: #517F03;
     --slime-darkest: #2B4B08;
@@ -208,7 +208,7 @@ header {
 
 /* CONTENT STYLING */
 .content {
-    margin-top: 1.25rem;
+    margin-top: 0.5rem; /* Reduced from 1.25rem */
     text-align: center;
     transition: opacity 0.3s ease;
     opacity: 0;
@@ -229,16 +229,46 @@ header {
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    padding-top: 1rem; /* Add small padding to position from top */
 }
 
 .quadrant.active .title {
     font-size: 2rem;
+    margin-top: 0; /* Add this */
+    margin-bottom: 0.5rem; /* Control space below title */
 }
 
 .quadrant.active .content {
     display: block;
     opacity: 1;
-    animation: fadeIn 0.5s ease; 
+    animation: fadeIn 0.5s ease;
+    margin-top: 0.5rem; /* Reduce from 1.25rem */
+}
+
+/* Card Title */
+.elemental-name {
+    font-family: 'Patrick Hand SC', sans-serif;
+    font-size: 2.5rem;
+    margin: 0 0 1rem 0;
+    text-align: center;
+    color: var(--grey-dark);
+    text-transform: none; /* Keep proper names readable */
+}
+
+/* Temperament Badge */
+.temperament-badge {
+    display: inline-block;
+    background: var(--grey-light);
+    color: var(--grey-dark);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 auto 1.5rem;
+    display: block;
+    width: fit-content;
+    font-family: 'Patrick Hand SC', sans-serif;
 }
 
 /* ELEMENTAL IMAGES */
@@ -246,27 +276,78 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
-    gap: 1rem;
+    justify-content: center; /* Changed from space-evenly */
+    gap: 3rem; /* Increased from 2rem for more space between images */
+    margin: 0.8rem 0;
+    padding: 0 2rem; /* Added padding for space from edges */
+}
+
+.elemental-images-container figure {
+    flex: 0 1 200px; /* Changed from flex: 1 to prevent stretching */
+    max-width: 200px;
+    text-align: center;
 }
 
 .elemental-image {
+    width: 100%;
     height: 10rem;
-    width: auto;
-    max-width: 15rem;
+    object-fit: contain;
+    border-radius: 10px;
+    background: var(--grey-light);
 }
 
-figcaption {
-    font-size: 1rem;
+.elemental-images-container figcaption {
+    font-size: 0.9rem; /* Reduced from 1rem */
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 0.3rem; /* Added small margin */
+    font-style: italic;
 }
+
+/* TRAITS GRID STYLING */
+.traits-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--grey-light);
+}
+
+.trait {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.trait-label {
+    font-family: 'Patrick Hand SC', sans-serif;
+    font-weight: bold;
+    min-width: 100px;
+    color: var(--grey-medium);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.trait-value {
+    flex: 1;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    color: var(--grey-dark);
+}
+
+/* Element-specific badge colors */
+.candy .temperament-badge { background: var(--candy-light); color: var(--candy-darkest); }
+.ice .temperament-badge { background: var(--ice-light); color: var(--ice-darkest); }
+.fire .temperament-badge { background: var(--fire-light); color: var(--fire-darkest); }
+.slime .temperament-badge { background: var(--slime-light); color: var(--slime-darkest); }
+.center-circle .temperament-badge { background: var(--lumps-light); color: var(--lumps-darkest); }
 
 /* Enhanced content styling for lore */
 .lore-content {
-    padding: 2rem;
+    padding: 1rem; /* Reduced from 2rem */
     background-color: var(--off-white);
     color: var(--grey-dark);
     border-radius: 15px;
@@ -281,8 +362,8 @@ figcaption {
 }
 
 .lore-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem; /* Reduced from 1.5rem */
+    margin-bottom: 0.3rem; /* Reduced from 0.5rem */
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--grey-dark);
@@ -291,13 +372,12 @@ figcaption {
 }
 
 .traits p,
-.history p, 
-.elemental-name {
-    margin: 0.5rem 0;
+.history p,  {
+    margin: 0.3rem 0; /* Reduced from 0.5rem */
     font-family: 'Patrick Hand', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1rem; /* Reduced from 1.3rem */
     color: var(--grey-dark);
-    line-height: 1.4;
+    line-height: 1.2; /* Tighter from 1.4 */
 }
 
 .traits strong {
@@ -305,6 +385,7 @@ figcaption {
     min-width: 80px;
 }
 
+/* Archived 
 .history {
     margin-top: 1rem;
     padding-top: 0.5rem;
@@ -314,47 +395,55 @@ figcaption {
     font-size: 0.8rem;
     opacity: 0.9;
 }
+*/ 
 
 /* Lore Section below the circle */
 .lore-section {
-    margin-top: 3rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
-    max-width: 900px;
+    gap: 2rem;
+    width: 50rem;
     margin-left: auto;
     margin-right: auto;
     padding: 0 1rem;
-    flex-wrap: wrap;
+}
+
+.section-title {
+    font-family: 'Patrick Hand SC', sans-serif;
+    font-size: 2.5rem;
+    color: var(--off-white);
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .lore-cards-container {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: stretch; /* Equal heights */
     justify-content: center;
-    gap: 1.5rem;
+    gap: 2rem;
+    width: 100%;
 }
 
 .lore-card {
-    background: white;
-    backdrop-filter: blur(10px);
+    background: var(--off-white);
     padding: 1.5rem;
     border-radius: 15px;
-    color: black;
-    flex: 1;
-    min-width: 250px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    padding: 1rem;
+    color: var(--grey-dark);
+    width: auto;
+    display: flex;
+    flex-direction: column;
 }
 
-.lore-card h2 {
+.lore-card h3 { /* Changed from h2 */
     margin-top: 0;
     margin-bottom: 1rem;
-    font-size: 2rem;
-    color: black;
+    font-size: 1.5rem;
+    color: var(--grey-dark);
     font-family: 'Patrick Hand SC', sans-serif;
 }
 
@@ -371,12 +460,26 @@ figcaption {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 2rem; /* Same gap as cards */
+    width: 100%;
+}
+
+.lore-figure {
+    text-align: center;
+    flex: 1; /* ADD: Make figures expand equally */
+}
+
+.lore-figure figcaption {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: var(--grey-light);
+    font-style: italic;
 }
 
 .world-image {
     width: auto;
     height: 15rem;
+    object-fit: cover;
     border-radius: 15px;
 }
 
@@ -409,7 +512,7 @@ figcaption {
     width: 35%;
     height: 35%;
     background: url('images/bg-ls.webp');
-    background-color: purple;
+    background-color: var(--lumps-medium);
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
@@ -425,21 +528,7 @@ figcaption {
     z-index: 15;
     transition: all 0.3s ease;
     color: white;
-    border: 5px solid purple;
-}
-
-.center-circle .title {
-    font-family: 'Patrick Hand SC', sans-serif;
-    font-size: 2rem;
-    background-color: white;
-    letter-spacing: 0.125rem;  /* Same as quadrant titles */
-    transition: all 0.3s ease;  /* Same as quadrant titles */
-    margin: 0;  /* Ensure proper centering */
-    text-align: center;
-    color: white;
-    background-color: purple;
-    border-radius: 15px;
-    padding: 0.5rem;
+    border: 5px solid var(--lumps-dark)
 }
 
 .center-circle:hover {
@@ -447,49 +536,6 @@ figcaption {
     box-shadow: 
         0 0 30px rgba(147, 51, 234, 0.7),
         inset 0 0 25px rgba(139, 92, 246, 0.4);
-}
-
-.lumps-symbol {
-    font-size: 2rem;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
-    transition: all 0.3s ease;
-}
-
-.lumps-content {
-    margin-top: 20px;
-    text-align: center;
-    transition: opacity 0.3s ease;
-    opacity: 0;
-    color: black;
-    padding: 0 1rem;
-    background: white;
-    border-radius: 15px;
-    padding: 2rem;
-}
-
-.lumps-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: black;
-    font-family: 'Patrick Hand SC', sans-serif;
-    text-align: center;
-}
-
-.lumps-content .elemental-name {
-    font-weight: bold;
-    margin: 0.5rem 0;
-    font-size: 1rem;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-    padding-bottom: 0.5rem;
-}
-
-.lumps-content p {
-    font-family: 'Patrick Hand', sans-serif;
-    font-size: 1.2rem;
-    color: black;
-    line-height: 1.4;
 }
 
 .lumps-content .role-description {
@@ -506,9 +552,17 @@ figcaption {
     border-radius: 50%;
     z-index: 20;
     transform: translate(-50%, -50%);
-    background: linear-gradient(135deg, #a855f7, #9333ea);
+    background: url('images/bg-ls.webp'); /* Keep the background image */
+    background-color: var(--lumps-medium);
     background-size: cover;
     background-position: center;
+    padding-top: 1rem; /* Match quadrant padding */
+}
+
+.center-circle.active .content {
+    display: block !important;
+    opacity: 1;
+    animation: fadeIn 0.5s ease;
 }
 
 .center-circle.active .title {
