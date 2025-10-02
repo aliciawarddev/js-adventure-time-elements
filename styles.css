@@ -1,22 +1,34 @@
-/* VARIABLES */
+/* ============================================
+   VARIABLES
+   ============================================ */
 :root {
     /* Element Colors */
+
+    /* Lumps */
     --lumps-light: #D696F7;
     --lumps-medium: #78077D;
     --lumps-dark: #520054;
     --lumps-darkest: #3A1234;
+
+    /* Candy*/
     --candy-light: #FFD5FD;
     --candy-medium: #FF8BFE;
     --candy-dark: #FE46FE;
     --candy-darkest: #BD20AF;
+
+    /* Ice */
     --ice-light: #89CCF4;
     --ice-medium: #085583;
     --ice-dark: #012F61;
     --ice-darkest: #041E5B;
+
+    /* Fire */
     --fire-light: #D1D6DA;
     --fire-medium: #707E8B;
     --fire-dark: #4A5666;
     --fire-darkest: #242C37;
+
+    /* Slime */
     --slime-light: #ADD555;
     --slime-medium: #679A01;
     --slime-dark: #517F03;
@@ -30,7 +42,9 @@
     --black: #1A1816;
 }
 
-/* GENERAL */
+/* ============================================
+   BASE STYLES
+   ============================================ */
 * {
     margin: 0;
     padding: 0;
@@ -53,7 +67,9 @@ body {
     height: 50rem;
 }
 
-/* HEADER */
+/* ============================================
+   HEADER
+   ============================================ */
 header {
     text-align: center;
     color: var(--off-white);
@@ -83,8 +99,11 @@ header {
     color: var(--grey-light);
 }
 
-/* CIRCLE */
-.circle {
+/* ============================================
+   MAIN CIRCLE COMPONENT
+   ============================================ */
+/* Circle */
+   .circle {
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -93,7 +112,7 @@ header {
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
 }
 
-/* QUADRANT */
+/* Quadrant */
 .quadrant {
     position: absolute;
     width: 50%;
@@ -113,11 +132,51 @@ header {
     font-size: 2rem;
 }
 
+/* ============================================
+   INTERACTIVE STATES
+   ============================================ */
+
+/* Only show outline on keyboard focus, not hover */
+.quadrant:focus-visible,
+.center-circle:focus-visible {
+    outline: 3px solid var(--off-white);
+    outline-offset: 2px;
+}
+
+/* Hover */
 .quadrant:hover {
     opacity: 1;
 }
 
-/* QUADRANT POSITIONING AND COLORS */
+/* Add hover states for better interactivity */
+.quadrant:hover:not(.active),
+.center-circle:hover:not(.active) {
+    outline: none;
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.center-circle:hover:not(.active) {
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+/* Screen reader only text */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ============================================
+   CONTENT CARDS
+   ============================================ */
+/* Ice */
 .ice {
     top: 0;
     right: 0;
@@ -130,6 +189,7 @@ header {
     border: 5px solid var(--ice-medium);
 }
 
+/* Candy */
 .candy {
     top: 0;
     left: 0;
@@ -142,6 +202,7 @@ header {
     border: 5px solid var(--candy-medium);
 }
 
+/* Fire */
 .fire {
     bottom: 0;
     left: 0;
@@ -154,6 +215,7 @@ header {
     border: 5px solid var(--fire-medium);
 }
 
+/* Slime */
 .slime {
     bottom: 0;
     right: 0;
@@ -210,7 +272,7 @@ header {
 /* Lumps title */
 .center-circle h2.title {
     font-family: 'Patrick Hand SC', sans-serif;
-    font-size: 1.5rem !important;
+    font-size: 2rem !important; /* Changed from 1.5rem to match .quadrant h2 */
     text-transform: uppercase;
     letter-spacing: 0.125rem;
     color: var(--off-white);
@@ -221,10 +283,11 @@ header {
 
 /* CONTENT STYLING */
 .content {
-    margin-top: 0.5rem; /* Reduced from 1.25rem */
+    margin-top: 0.5rem;
     text-align: center;
-    transition: opacity 0.3s ease;
     opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother easing */
+    pointer-events: none; /* Prevent interaction when hidden */
 }
 
 .content p {
@@ -258,6 +321,17 @@ header {
     margin-top: 0.5rem; /* Reduce from 1.25rem */
 }
 
+.quadrant.active .content,
+.center-circle.active .content {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.quadrant,
+.center-circle {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother easing */
+}
+
 /* Card Title */
 .elemental-name {
     font-family: 'Patrick Hand SC', sans-serif;
@@ -282,6 +356,7 @@ header {
     display: block;
     width: fit-content;
     font-family: 'Patrick Hand SC', sans-serif;
+    font-weight: 600;
 }
 
 /* ELEMENTAL IMAGES */
@@ -358,7 +433,9 @@ header {
 .slime .temperament-badge { background: var(--slime-light); color: var(--slime-darkest); }
 .center-circle .temperament-badge { background: var(--lumps-light); color: var(--lumps-darkest); }
 
-/* Enhanced content styling for lore */
+/* ============================================
+   LORE SECTION
+   ============================================ */
 .lore-content {
     padding: 1rem; /* Reduced from 2rem */
     background-color: var(--off-white);
@@ -397,18 +474,6 @@ header {
     min-width: 80px;
 }
 
-/* Archived 
-.history {
-    margin-top: 1rem;
-    padding-top: 0.5rem;
-}
-
-.note {
-    font-size: 0.8rem;
-    opacity: 0.9;
-}
-*/ 
-
 /* Lore Section below the circle */
 .lore-section {
     margin-top: 4rem;
@@ -438,7 +503,7 @@ header {
     align-items: stretch; /* Equal heights */
     justify-content: center;
     gap: 2rem;
-    width: 55rem;
+    width: 56rem;
 }
 
 .lore-card {
@@ -449,7 +514,7 @@ header {
     height: auto;
     display: flex;
     flex-direction: column;
-    flex: stretch;
+    flex: 1;
 }
 
 .lore-card h3 { /* Changed from h2 */
@@ -501,6 +566,7 @@ header {
     animation: fadeIn 0.5s ease;
 }
 
+/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -599,28 +665,67 @@ header {
     gap: 0.25rem;
 }
 
-/* Responsive adjustments */
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
+    .container {
+        width: 90vw;
+        height: 90vw;
+        max-width: 30rem;
+        max-height: 30rem;
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .intro {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .elemental-name {
+        font-size: 1.8rem;
+    }
+    
+    .elemental-image {
+        height: 7rem;
+    }
+    
+    .elemental-images-container {
+        padding: 0 1rem;
+        gap: 1.5rem;
+    }
+    
     .lore-section {
+        width: 90vw;
+    }
+    
+    .lore-cards-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .lore-images-container {
         flex-direction: column;
     }
-    
+}
+
+/* Tablet screens */
+@media (min-width: 769px) and (max-width: 1024px) {
     .container {
-        width: 18rem;
-        height: 18rem;
+        width: 35rem;
+        height: 35rem;
     }
     
-    header h1 {
-        font-size: 2rem;
+    .page-title {
+        font-size: 3rem;
     }
     
-    .center-circle {
-        width: 30%;
-        height: 30%;
-    }
-    
-    .lumps-content {
-        min-width: 200px;
-        font-size: 0.85rem;
+    .lore-section {
+        width: 40rem;
     }
 }

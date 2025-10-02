@@ -12,16 +12,19 @@
 </head>
 
 <body>
+    <!-- Skip Navigation link-->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+    <!-- Header -->
     <header>
         <h1 class="page-title">Adventure Time Elements</h1>
         <p class="subtitle">The four elemental forces must remain balanced for Ooo to survive</p>
         <p class="intro">This interactive guide explores the elemental forces from Adventure Time's "Elements" miniseries. Click on each section of the circle to learn about the powers, personalities, and corruptions of each elemental force.</p>
     </header>
     
-    <div class="container">
+    <div class="container" id="main-content">
         <div class="circle">
             <!-- Candy Quadrant (Top Left) -->
-            <div class="quadrant candy" data-element="candy">
+            <div class="quadrant candy" data-element="candy" aria-label="Candy element information">
                 <h2 class="title">Candy</h2>
                 <div class="content hidden">
                     <div class="lore-content">
@@ -64,7 +67,7 @@
             </div>
 
             <!-- Ice Quadrant (Top Right) -->
-            <div class="quadrant ice" data-element="ice">
+            <div class="quadrant ice" data-element="ice" aria-label="Ice element information">
                 <h2 class="title">Ice</h2>
                 <div class="content hidden">
                     <div class="lore-content">
@@ -99,7 +102,7 @@
             </div>
 
             <!-- Slime Quadrant (Bottom Right) -->
-            <div class="quadrant slime" data-element="slime">
+            <div class="quadrant slime" data-element="slime" aria-label="Slime element information">
                 <h2 class="title">Slime</h2>
                 <div class="content hidden">
                     <div class="lore-content">
@@ -134,7 +137,7 @@
             </div>
 
             <!-- Fire Quadrant (Bottom Left) -->
-            <div class="quadrant fire" data-element="fire">
+            <div class="quadrant fire" data-element="fire" aria-label="Fire element information">
                 <h2 class="title">Fire</h2>
                 <div class="content hidden">
                     <div class="lore-content">
@@ -169,7 +172,7 @@
             </div>
 
             <!-- Lumps Center Circle -->
-            <div class="center-circle" data-element="lumps">
+            <div class="center-circle" data-element="lumps" aria-label="Lumps anti-element information">
                 <h2 class="title">Lumps</h2>
                 <div class="content hidden">
                     <div class="lore-content">
